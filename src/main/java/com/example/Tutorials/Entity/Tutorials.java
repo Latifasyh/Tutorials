@@ -22,7 +22,7 @@ public class Tutorials {
     private String description;
     private Boolean published;
 
-    @OneToMany(mappedBy = "tutorials")
+    @OneToMany(mappedBy = "tutorials" , cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Comments> comments = new ArrayList<>();
     //getter and setter
     public List <Comments> getComments(){
